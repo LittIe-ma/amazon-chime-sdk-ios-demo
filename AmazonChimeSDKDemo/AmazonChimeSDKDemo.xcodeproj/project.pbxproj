@@ -272,14 +272,14 @@
 		};
 		C4A690AC255DFF4600F28BC2 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
 				C4A690A8255DFF4600F28BC2 /* AmazonChimeSDKDemoBroadcast.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 		};
 		ED36C8BA27E319C70061E150 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -1412,7 +1412,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0.26.0;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = WU2QLL3F9F;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../AmazonChimeSDK/";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1432,7 +1432,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.amazonaws.services.chime.SDKDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.amazonaws.services.chime.SDKDemo-yasuda-demo";
 				PRODUCT_NAME = AmazonChimeSDKDemo;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -1456,7 +1456,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0.26.0;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = WU2QLL3F9F;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../AmazonChimeSDK/";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1477,7 +1477,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.amazon.chime.sdk.enterprise;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.amazon.chime.sdk.enterprise-yasuda-demo";
 				PRODUCT_NAME = AmazonChimeSDKDemo;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -1500,7 +1500,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0.26.0;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = WU2QLL3F9F;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1522,7 +1522,7 @@
 					"-framework",
 					AmazonChimeSDKMachineLearning,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.amazonaws.services.chime.SDKDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.amazonaws.services.chime.SDKDemo-yasuda-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -1545,7 +1545,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0.26.0;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = WU2QLL3F9F;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1568,7 +1568,7 @@
 					"-framework",
 					AmazonChimeSDKMachineLearning,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.amazon.chime.sdk.enterprise;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.amazon.chime.sdk.enterprise-yasuda-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -1588,7 +1588,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0.26.0;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = WU2QLL3F9F;
 				ENABLE_BITCODE = NO;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "AmazonChimeSDKDemoBroadcastSPM-Info.plist";
@@ -1599,7 +1599,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 0.13.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.amazonaws.services.chime.SDKDemo.AmazonChimeSDKDemoBroadcast;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.amazonaws.services.chime.SDKDemo.AmazonChimeSDKDemoBroadcast-yasuda-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
@@ -1616,7 +1616,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0.26.0;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = WU2QLL3F9F;
 				ENABLE_BITCODE = NO;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "AmazonChimeSDKDemoBroadcastSPM-Info.plist";
@@ -1627,7 +1627,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 0.13.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.amazon.chime.sdk.enterprise.broadcast;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.amazon.chime.sdk.enterprise.broadcast-yasuda-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
@@ -1644,7 +1644,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0.26.0;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = WU2QLL3F9F;
 				ENABLE_BITCODE = NO;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = AmazonChimeSDKDemoBroadcast/Info.plist;
@@ -1655,7 +1655,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 0.13.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.amazonaws.services.chime.SDKDemo.AmazonChimeSDKDemoBroadcast;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.amazonaws.services.chime.SDKDemo.AmazonChimeSDKDemoBroadcast-yasuda-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
@@ -1672,7 +1672,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0.26.0;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = WU2QLL3F9F;
 				ENABLE_BITCODE = NO;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = AmazonChimeSDKDemoBroadcast/Info.plist;
@@ -1683,7 +1683,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 0.13.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.amazon.chime.sdk.enterprise.broadcast;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.amazon.chime.sdk.enterprise.broadcast-yasuda-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
@@ -1701,7 +1701,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0.26.0;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = WU2QLL3F9F;
 				ENABLE_BITCODE = NO;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = AmazonChimeSDKDemoBroadcast/Info.plist;
@@ -1713,7 +1713,7 @@
 				);
 				MARKETING_VERSION = 0.13.0;
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.amazonaws.services.chime.SDKDemo.AmazonChimeSDKDemoBroadcast;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.amazonaws.services.chime.SDKDemo.AmazonChimeSDKDemoBroadcast-yasuda-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
@@ -1731,7 +1731,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0.26.0;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = WU2QLL3F9F;
 				ENABLE_BITCODE = NO;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = AmazonChimeSDKDemoBroadcast/Info.plist;
@@ -1743,7 +1743,7 @@
 				);
 				MARKETING_VERSION = 0.13.0;
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.amazon.chime.sdk.enterprise.broadcast;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.amazon.chime.sdk.enterprise.broadcast-yasuda-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
@@ -1764,7 +1764,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0.26.0;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = WU2QLL3F9F;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1786,7 +1786,7 @@
 					"-framework",
 					AmazonChimeSDKMachineLearning,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.amazonaws.services.chime.SDKDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.amazonaws.services.chime.SDKDemo-yasuda-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -1810,7 +1810,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0.26.0;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = WU2QLL3F9F;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1833,7 +1833,7 @@
 					"-framework",
 					AmazonChimeSDKMachineLearning,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.amazon.chime.sdk.enterprise;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.amazon.chime.sdk.enterprise-yasuda-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -1854,7 +1854,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0.26.0;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = WU2QLL3F9F;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../AmazonChimeSDK/";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1877,7 +1877,7 @@
 					"-lc++",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.amazonaws.services.chime.AmazonChimeSDKDemoObjC;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.amazonaws.services.chime.AmazonChimeSDKDemoObjC-yasuda-demo";
 				PRODUCT_NAME = AmazonChimeSDKDemoObjC;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -1896,7 +1896,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0.26.0;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = WU2QLL3F9F;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../AmazonChimeSDK/";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1920,7 +1920,7 @@
 					"-lc++",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.amazonaws.services.chime.AmazonChimeSDKDemoObjC;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.amazonaws.services.chime.AmazonChimeSDKDemoObjC-yasuda-demo";
 				PRODUCT_NAME = AmazonChimeSDKDemoObjC;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
