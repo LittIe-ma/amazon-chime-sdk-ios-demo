@@ -74,7 +74,7 @@ class BackgroundFilterTests: XCTestCase {
 
         given(videoSinkMock.onVideoFrameReceived(frame: any())) ~> { [self] videoFrame in
             let result = self.processImage(frame: videoFrame)
-            processedImage = result.image
+            processedImage = result.symbolName
             videoFrameReceivedExpectation!.fulfill()
         }
 
@@ -97,13 +97,13 @@ class BackgroundFilterTests: XCTestCase {
             wait(for: [videoFrameReceivedExpectation!], timeout: 1)
             XCTAssert(processedImage != nil)
 
-            guard let gotCgImage = self.resize(image: processedImage!, to: downscaledSize).cgImage,
+            guard let gotCgImage = self.resize(symbolName: processedImage!, to: downscaledSize).cgImage,
                 let gotCgImageData = gotCgImage.dataProvider?.data,
                 let gotCgImageBytes = CFDataGetBytePtr(gotCgImageData) else {
                 XCTFail("Couldn't access CGImage data")
                 return
             }
-            guard let expectedCgImage = self.resize(image: self.expectedBlurImage!, to: downscaledSize).cgImage,
+            guard let expectedCgImage = self.resize(symbolName: self.expectedBlurImage!, to: downscaledSize).cgImage,
                 let expectedCgImageData = expectedCgImage.dataProvider?.data,
                 let expectedCgImageBytes = CFDataGetBytePtr(expectedCgImageData) else {
                 XCTFail("Couldn't access CGImage data")
@@ -140,7 +140,7 @@ class BackgroundFilterTests: XCTestCase {
 
         given(videoSinkMock.onVideoFrameReceived(frame: any())) ~> { videoFrame in
             let result = self.processImage(frame: videoFrame)
-            processedImage = result.image
+            processedImage = result.symbolName
             videoFrameReceivedExpectation!.fulfill()
         }
 
@@ -176,13 +176,13 @@ class BackgroundFilterTests: XCTestCase {
             wait(for: [videoFrameReceivedExpectation!], timeout: 1)
             XCTAssert(processedImage != nil)
 
-            guard let gotCgImage = self.resize(image: processedImage!, to: downscaledSize).cgImage,
+            guard let gotCgImage = self.resize(symbolName: processedImage!, to: downscaledSize).cgImage,
                 let gotCgImageData = gotCgImage.dataProvider?.data,
                 let gotCgImageBytes = CFDataGetBytePtr(gotCgImageData) else {
                 XCTFail("Couldn't access CGImage data")
                 return
             }
-            guard let expectedCgImage = self.resize(image: self.expectedReplacementImage!, to: downscaledSize).cgImage,
+            guard let expectedCgImage = self.resize(symbolName: self.expectedReplacementImage!, to: downscaledSize).cgImage,
                 let expectedCgImageData = expectedCgImage.dataProvider?.data,
                 let expectedCgImageBytes = CFDataGetBytePtr(expectedCgImageData) else {
                 XCTFail("Couldn't access CGImage data")
