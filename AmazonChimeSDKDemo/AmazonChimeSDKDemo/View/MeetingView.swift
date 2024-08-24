@@ -35,6 +35,9 @@ struct VideoTileView: View {
   var body: some View {
     Image("callkit-icon")
       .frame(maxWidth: .infinity, maxHeight: .infinity)
+      .background(Color.white)
+      .cornerRadius(8)
+      .padding(.all, 3)
   }
 }
 
@@ -72,8 +75,6 @@ struct MeetingView: View {
                 width: items.count == 1 ? geometry.size.width : geometry.size.width / 2,
                 height: items.count == 1 ? geometry.size.height : geometry.size.height / 2
               )
-              .background(Color.white)
-              .border(Color.red, width: 2)
           }
         }
       }
