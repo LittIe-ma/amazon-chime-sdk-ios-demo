@@ -31,8 +31,17 @@ enum BottomControl: CaseIterable, Identifiable {
 }
 
 @available(iOS 15.0, *)
+struct VideoTileView: View {
+  var body: some View {
+    Image("callkit-icon")
+      .frame(maxWidth: .infinity, maxHeight: .infinity)
+  }
+}
+
+@available(iOS 15.0, *)
 struct MeetingView: View {
   @State private var selectedSegment: ActiveMode = .attendees
+  @State private var items: [String] = ["aaa", "bbb", "ccc", "ddd"]
 
   init() {
     let appearance = UISegmentedControl.appearance()
@@ -52,7 +61,25 @@ struct MeetingView: View {
       }
       .pickerStyle(.segmented)
       .padding()
-      Spacer()
+      GeometryReader { geometry in
+        let columns: [GridItem] = items.count == 1
+        ? [GridItem(.flexible())]
+        : Array(repeating: GridItem(.flexible(), spacing: 0), count: 2)
+        LazyVGrid(columns: columns, spacing: 0) {
+          ForEach(items, id: \.self) { item in
+            VideoTileView()
+              .frame(
+                width: items.count == 1 ? geometry.size.width : geometry.size.width / 2,
+                height: items.count == 1 ? geometry.size.height : geometry.size.height / 2
+              )
+              .background(Color.white)
+              .border(Color.red, width: 2)
+          }
+        }
+      }
+      .frame(maxWidth: .infinity, maxHeight: .infinity)
+      .padding()
+      .background(Color.red)
       HStack {
         ForEach(BottomControl.allCases) { item in
           Spacer()
