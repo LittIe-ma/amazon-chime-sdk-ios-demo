@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class MeetingPresenter {
     private let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -17,16 +18,26 @@ class MeetingPresenter {
     }
 
     func showMeetingView(meetingModel: MeetingModel, completion: @escaping (Bool) -> Void) {
-        guard let meetingViewController = mainStoryboard.instantiateViewController(withIdentifier: "meeting")
-            as? MeetingViewController, let rootViewController = self.rootViewController else {
-            completion(false)
-            return
-        }
-        meetingViewController.modalPresentationStyle = .fullScreen
-        meetingViewController.meetingModel = meetingModel
-        rootViewController.present(meetingViewController, animated: true) {
-            self.activeMeetingViewController = meetingViewController
-            completion(true)
+        if #available(iOS 15.0, *) {
+            let meetingView = MeetingView(meetingModel: meetingModel)
+            let hostingViewController = UIHostingController(rootView: meetingView)
+            hostingViewController.modalPresentationStyle = .fullScreen
+            rootViewController?.present(hostingViewController, animated: true) {
+                self.activeMeetingViewController = hostingViewController
+                completion(true)
+            }
+        } else {
+            guard let meetingViewController = mainStoryboard.instantiateViewController(withIdentifier: "meeting")
+                as? MeetingViewController, let rootViewController = self.rootViewController else {
+                completion(false)
+                return
+            }
+            meetingViewController.modalPresentationStyle = .fullScreen
+            meetingViewController.meetingModel = meetingModel
+            rootViewController.present(meetingViewController, animated: true) {
+                self.activeMeetingViewController = meetingViewController
+                completion(true)
+            }
         }
     }
 
