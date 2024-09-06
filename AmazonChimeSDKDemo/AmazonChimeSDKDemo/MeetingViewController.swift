@@ -681,6 +681,7 @@ class MeetingViewController: UIViewController {
                                                    name: "promoted-\(meetingModel.selfName)",
                                                    overriddenEndpoint: MeetingModule.shared().cachedOverriddenEndpoint,
                                                    primaryExternalMeetingId: "") { joinMeetingResponse in
+                    print("=== joinMeetingResponse", joinMeetingResponse as Any)
                     if let joinMeetingResponse = joinMeetingResponse {
                         self.logger.info(msg: "Attempting to promote to primary meeting")
                         let meetingResp = JoinRequestService.getCreateMeetingResponse(from: joinMeetingResponse)

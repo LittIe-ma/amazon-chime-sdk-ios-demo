@@ -107,8 +107,10 @@ struct CreateAttendee: Codable {
 }
 
 struct CreateJoinInfo: Codable {
-    var meeting: CreateMeeting
-    var attendee: CreateAttendee
+//    var meeting: CreateMeeting
+    var meeting: CreateMeetingInfo
+//    var attendee: CreateAttendee
+    var attendee: CreateAttendeeInfo
     var primaryExternalMeetingId: String?
 
     enum CodingKeys: String, CodingKey {

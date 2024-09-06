@@ -9,8 +9,9 @@
 import Foundation
 
 struct AppConfiguration {
-    static let url = "YOUR_SERVER_URL"
-    static let region = "YOUR_SERVER_REGION"
+    // nglockだと毎回URL変わるから都度差し替える
+    static let url = "https://fb24-240f-c1-a949-1-915c-641-b28-49af.ngrok-free.app/"
+    static let region = "ap-northeast-1"
     static let broadcastBundleId = "YOUR_BROADCAST_BUNDLE_ID"
     static let appGroupId = "YOUR_APP_GROUP_ID"
 }

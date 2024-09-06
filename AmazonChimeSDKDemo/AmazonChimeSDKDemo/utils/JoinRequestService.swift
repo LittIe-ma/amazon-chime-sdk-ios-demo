@@ -19,11 +19,24 @@ class JoinRequestService: NSObject {
                                 completion: @escaping (JoinMeetingResponse?) -> Void) {
         var url = overriddenEndpoint.isEmpty ? AppConfiguration.url : overriddenEndpoint
         url = url.hasSuffix("/") ? url : "\(url)/"
-        let primaryExternalMeetingIdQueryParam = primaryExternalMeetingId.isEmpty ? "" : "&primaryExternalMeetingId=\(primaryExternalMeetingId)"
+//        let primaryExternalMeetingIdQueryParam = primaryExternalMeetingId.isEmpty ? "" : "&primaryExternalMeetingId=\(primaryExternalMeetingId)"
         let encodedURL = HttpUtils.encodeStrForURL(
-            str: "\(url)join?title=\(meetingId)&name=\(name)&region=\(AppConfiguration.region)\(primaryExternalMeetingIdQueryParam)"
+            str: "\(url)join"
         )
-        HttpUtils.postRequest(url: encodedURL, jsonData: nil, logger: logger) { data, _ in
+//        print("=== encodedURL", encodedURL)
+        let parameters: [String: Any] = [
+            "title": meetingId,
+            "attendeeName": name,
+            "region": AppConfiguration.region,
+            "ns_es": false
+        ]
+
+        let jsonData = try? JSONSerialization.data(withJSONObject: parameters)
+
+        HttpUtils.postRequest(url: encodedURL, jsonData: jsonData, logger: logger) { data, error in
+            print("=== HttpUtils.postRequest error", error as Any, "data", data as Any)
+            let json = try! JSONSerialization.jsonObject(with: data ?? Data(), options: []) as! [String: Any]
+            print("=== json", json)
             guard let data = data else {
                 completion(nil)
                 return
@@ -32,6 +45,7 @@ class JoinRequestService: NSObject {
                 completion(nil)
                 return
             }
+            print("=== completion", joinMeetingResponse)
             completion(joinMeetingResponse)
         }
     }
@@ -60,7 +74,7 @@ class JoinRequestService: NSObject {
     }
 
     static func getCreateMeetingResponse(from joinMeetingResponse: JoinMeetingResponse) -> CreateMeetingResponse {
-        let meeting = joinMeetingResponse.joinInfo.meeting.meeting
+        let meeting = joinMeetingResponse.joinInfo.meeting
         let meetingResp = CreateMeetingResponse(meeting:
             Meeting(
                 externalMeetingId: meeting.externalMeetingId,
@@ -84,7 +98,7 @@ class JoinRequestService: NSObject {
     }
 
     static func getCreateAttendeeResponse(from joinMeetingResponse: JoinMeetingResponse) -> CreateAttendeeResponse {
-        let attendee = joinMeetingResponse.joinInfo.attendee.attendee
+        let attendee = joinMeetingResponse.joinInfo.attendee
         let attendeeResp = CreateAttendeeResponse(attendee:
             Attendee(attendeeId: attendee.attendeeId,
                      externalUserId: attendee.externalUserId,
