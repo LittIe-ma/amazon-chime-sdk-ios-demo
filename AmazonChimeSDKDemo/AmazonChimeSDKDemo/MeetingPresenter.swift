@@ -18,26 +18,46 @@ class MeetingPresenter {
     }
 
     func showMeetingView(meetingModel: MeetingModel, completion: @escaping (Bool) -> Void) {
-        if #available(iOS 15.0, *) {
-            let meetingView = MeetingView(meetingModel: meetingModel)
-            let hostingViewController = UIHostingController(rootView: meetingView)
-            hostingViewController.modalPresentationStyle = .fullScreen
-            rootViewController?.present(hostingViewController, animated: true) {
-                self.activeMeetingViewController = hostingViewController
-                completion(true)
-            }
-        } else {
-            guard let meetingViewController = mainStoryboard.instantiateViewController(withIdentifier: "meeting")
+//        if #available(iOS 15.0, *) {
+//            let meetingView = MeetingView(meetingModel: meetingModel)
+//            let hostingViewController = UIHostingController(rootView: meetingView)
+//            hostingViewController.modalPresentationStyle = .fullScreen
+//            rootViewController?.present(hostingViewController, animated: true) {
+//                self.activeMeetingViewController = hostingViewController
+//                completion(true)
+//            }
+//        } else {
+//            guard let meetingViewController = mainStoryboard.instantiateViewController(withIdentifier: "meeting")
+//                as? MeetingViewController, let rootViewController = self.rootViewController else {
+//                completion(false)
+//                return
+//            }
+//            meetingViewController.modalPresentationStyle = .fullScreen
+//            meetingViewController.meetingModel = meetingModel
+//            rootViewController.present(meetingViewController, animated: true) {
+//                self.activeMeetingViewController = meetingViewController
+//                completion(true)
+//            }
+//        }
+
+//        let meetingViewController = CustomMeetingViewController()
+//        meetingViewController.modalPresentationStyle = .fullScreen
+//        meetingViewController.meetingModel = meetingModel
+//        rootViewController?.present(meetingViewController, animated: true) {
+//            self.activeMeetingViewController = meetingViewController
+//            completion(true)
+//        }
+
+        guard let meetingViewController = mainStoryboard.instantiateViewController(withIdentifier: "meeting")
                 as? MeetingViewController, let rootViewController = self.rootViewController else {
-                completion(false)
-                return
-            }
-            meetingViewController.modalPresentationStyle = .fullScreen
-            meetingViewController.meetingModel = meetingModel
-            rootViewController.present(meetingViewController, animated: true) {
-                self.activeMeetingViewController = meetingViewController
-                completion(true)
-            }
+            completion(false)
+            return
+        }
+        meetingViewController.modalPresentationStyle = .fullScreen
+        meetingViewController.meetingModel = meetingModel
+        rootViewController.present(meetingViewController, animated: true) {
+            self.activeMeetingViewController = meetingViewController
+            completion(true)
         }
     }
 
